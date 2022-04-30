@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>onclick Javascript event</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <div class="flex--container">
+        <h1 class="headline">My name is </h1><span class="display--row">
+            <!-- 1.클릭하면 show display :none, myname display: block -->      
+            <!-- 2.다시 클릭하면 1번의 과정의 반대 -->
+            <p class="show" id="show">Show it Now!</p>            
+            <p class="myname" id="myname">Kim Ki Su</p>
+        </span>
+    </div>
+    <!-- partial -->
+    
+    <script>
+        const showEl = document.querySelector("#show");
+        
+        showEl.addEventListener('click', function(){
+            this.style.display = 'none'; // 여기서 this 는 show를 가리키고 있음
+            this.nextElementSibling.style.display = 'block';  // 여기서 this.nextElementSibling 하므로써 다음 노드인 myname을 가리킴
+        });
+
+
+        const myNameEl = document.querySelector("#myname");
+        
+        myNameEl.addEventListener('click', function(){        
+            this.style.display = 'none';    // 여기서 this는 myname을 가리킴
+            this.previousElementSibling.style.display = 'block';  // this.previousElementSibling 하므로써 이전 노드인 show를 가리킴
+        });
+    </script>
+
+</body>
+
+</html>
