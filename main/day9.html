@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>클릭</button>
+    <input>
+
+    <a href = "https://www.naver.com/" target="_blank">링크</a>
+    <script>
+        const btnEl = document.querySelector('button');
+        btnEl.addEventListener('click', function(event){
+            console.log(event);
+        });
+        const inputEl = document.querySelector('input');
+        inputEl.addEventListener('keyup', function(e){
+            const regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g;
+            if(regExp.test(e.key)){
+                this.value = this.value.substr(0, this.value.length - 1);
+            }
+        });
+        
+        const aEls = document.querySelector('a');
+        aEls.addEventListener('click', function(e){
+            e.preventDefault();  // 속성을 무효화 시켜주는 메소드
+        });
+    </script>
+</body>
+</html>
