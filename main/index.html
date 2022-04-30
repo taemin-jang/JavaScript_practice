@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading" class="red">hello</h1>
+    <h1 class="red">hello2</h1>
+    <script>
+        // const dom = document.getElementsByTagName("h1");   // document에서 일치하는 h1 태그를 찾아주세요 태그는 여러번 사용될 수 있어서 getElementsByTagName() s가 붙음 배열형태 문서 객체 노드로 들어감
+        // dom[0].textContent = 'change';
+        // console.log(dom[1]);
+        // const el2 = document.getElementById('heading'); // id속성을 찾아 주세요 id 속성은 html에서 중복되지 않으므로getElementById() s가 안붙음
+        // console.log(el2);
+        const clas = document.getElementsByClassName('red');
+        console.log(clas);
+        const el = document.querySelectorAll("h1")  // querySelector 는 하나만 찾아줌, querySelectorAll은 다 찾아줌 문서객체를 선택할 때 사용
+        console.log(el);
+
+        Array.prototype.forEach.call(clas, function(v) {
+        console.log(v);
+        });
+    </script>
+</body>
+</html>
