@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue01</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-bind는 vue에서만 사용가능 app은 이미 vue를 이용하고있으므로 가능하다. 
+            v-bind 같은 경우는 v directive라고 함
+            v-bind 는 : 으로 줄여 쓸 수 있음-->
+      <a v-if="seen" :href="link" target="_blank">seen</a>
+      <a v-else-if="seen2" :href="link" target="_blank">seen2</a>
+      <a v-else :href="link" target="_blank">seen3</a>
+      <ui>
+        <li v-for="(item, index) in fruits" v-bind:key="`fruits-$(index)`">
+          {{ item }}
+        </li>
+      </ui>
+      <ui>
+        <li v-for="(item, index) in fruits" v-bind:key="`fruits2-$(index)`">
+          {{ item }}
+        </li>
+      </ui>
+    </div>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "수코딩 바로가기", // const message = 'My First Vue' 와 똑같은 의미
+          link: "https://www.sucoding.kr",
+          seen: false,
+          seen2: false,
+          fruits: ["apple", "banana", "orange"],
+        },
+      });
+    </script>
+  </body>
+</html>
