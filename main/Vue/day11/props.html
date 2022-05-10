@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #fruits h1 {
+        color: red;
+      }
+      #fruits-item {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <fruits v-bind:item="fruits"></fruits>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      Vue.component("fruits-item", {
+        template: `
+          <li id=fruits-item>{{value}}</li>
+        `,
+        props: ["value"],
+      });
+
+      Vue.component("fruits", {
+        template: `
+        <div id=fruits>
+          <h1> 과일 목록 </h1>
+          <ul>
+            <fruits-item v-for="(value, index) in item" v-bind:key="index" v-bind:value="value"></fruits-item>
+          </ul>
+        </div>
+        `,
+        props: ["item"],
+      });
+      new Vue({
+        el: "#app",
+        data: {
+          fruits: ["apple", "banana", "orange"],
+        },
+      });
+    </script>
+  </body>
+</html>
