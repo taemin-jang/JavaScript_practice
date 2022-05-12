@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* 레이아웃 1 */
+.container .c1 {
+  flex-basis: 100%;
+}
+
+.background_init {
+  background: none;
+  color: inherit;
+}

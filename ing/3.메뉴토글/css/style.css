@@ -1,0 +1,394 @@
+/* 레이아웃 1 */
+.container .c1 {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  color: #707070;
+}
+
+.container .c1 .logo {
+  font-size: 20px;
+}
+
+.container .c1 .navbar {
+  font-size: 16px;
+}
+
+.container .c1 .navbar li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* 모바일 메뉴 처리 */
+.container .c1 .mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 659px) {
+  .container .c1 {
+    position: relative;
+  }
+
+  .container .c1 .navbar {
+    display: none;
+  }
+
+  .container .c1 .navbar.expand {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    text-align: center;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    margin: 16px 0;
+  }
+
+  .container .c1 .navbar.expand li {
+    padding: 16px 0;
+  }
+
+  /* 모바일 메뉴 처리 */
+  .container .c1 .mobile-menu {
+    display: block;
+  }
+}
+
+/* 레이아웃 2 ~ 3*/
+
+.container .c2 {
+  align-self: center;
+  padding: 0 10px;
+}
+
+.container .c2 .title {
+  color: #069c54;
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.container .c2 .desc {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 22px 0;
+}
+
+/* .container .c2 .btn */
+.container .btn {
+  display: inline-block;
+  background-color: #069c54;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.container .c3 img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 942px) {
+  .container .c2 .title {
+    font-size: 44px;
+  }
+  .container .c2 .desc {
+    font-size: 24px;
+  }
+  .container .btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 659px) {
+  .container .c2 {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .container .c3 {
+    text-align: center;
+  }
+  .container .c3 img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* 레이아웃 4 ~ 5 */
+
+.container .c4 img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 10px;
+}
+
+.container .c5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 26px;
+}
+
+.container .c5 .category {
+  color: #069c54;
+  font-size: 20px;
+}
+
+.container .c5 .title {
+  font-size: 36px;
+}
+
+.container .c5 .desc {
+  color: #707070;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 942px) {
+  .container .c5 .category {
+    font-size: 16px;
+  }
+
+  .container .c5 .title {
+    font-size: 28px;
+  }
+
+  .container .c5 .desc {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 659px) {
+  .container.about .row {
+    flex-direction: column-reverse;
+  }
+
+  .container .c4 {
+    text-align: center;
+  }
+
+  .container .c4 img {
+    max-width: 300px;
+  }
+
+  .container .c5 {
+    margin-bottom: 40px;
+    display: block;
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+/* 레이아웃 6 ~ 9 */
+.container .c6 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.container .c6 .category {
+  color: #069c54;
+  font-size: 20px;
+}
+
+.container .c6 .title {
+  font-size: 36px;
+}
+
+.container .c6 .desc {
+  color: #707070;
+  margin: 20px 0;
+}
+
+/* .c7 = .card */
+.container .card {
+  text-align: center;
+  padding: 0 16px;
+}
+
+.container .card .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0 10px;
+}
+
+.container .card .desc {
+  font-size: 16px;
+  color: #707070;
+}
+
+@media screen and (max-width: 659px) {
+  .container .card {
+    margin-bottom: 50px;
+  }
+}
+
+/* 레이아웃 10 ~ 13 */
+.container .c10 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.container .c10 .category {
+  color: #069c54;
+  font-size: 20px;
+}
+
+.container .c10 .title {
+  font-size: 36px;
+}
+
+.container .c10 .desc {
+  color: #707070;
+  margin: 20px 0;
+}
+
+/* 레이아웃 c11 */
+.container .card2 {
+  text-align: center;
+  padding: 0 16px;
+}
+
+.container .card2 .box {
+  padding: 48px 0;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.container .card2 .box img {
+  width: 100%;
+  max-width: 188px;
+}
+
+.container .card2 .box .title {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 659px) {
+  .container .card2 {
+    margin-bottom: 30px;
+  }
+}
+
+/* 레이아웃 c14 ~ 15 */
+
+.container .c14 {
+  text-align: center;
+}
+
+.container .c14 img {
+  height: 400px;
+}
+
+/* c5랑 똑같음 */
+.container .c15 {
+  align-self: center;
+}
+
+.container .c15 .category {
+  color: #069c54;
+  font-size: 20px;
+}
+
+.container .c15 .title {
+  font-size: 36px;
+}
+
+.container .c15 .desc {
+  color: #707070;
+  margin: 20px 0;
+}
+
+/* c5랑 다른점 */
+.container .c15 .app-icon img {
+  width: 150px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 942px) {
+  .container .c15 .category {
+    font-size: 16px;
+  }
+
+  .container .c15 .title {
+    font-size: 28px;
+  }
+
+  .container .c15 .desc {
+    font-size: 14px;
+  }
+}
+
+/* c5랑 같음 , .about-> .app 변경 */
+@media screen and (max-width: 659px) {
+  .container.app .row {
+    flex-direction: column-reverse;
+  }
+
+  .container .c14 {
+    text-align: center;
+  }
+
+  .container .c14 img {
+    width: auto;
+    height: 327px;
+  }
+
+  .container .c15 {
+    margin-bottom: 40px;
+    display: block;
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+/* .c16  -> .c5 , .c15랑 같음 */
+/* c5랑 똑같음 */
+.container .c16 {
+  align-self: center;
+}
+
+.container .c16 .category {
+  color: #069c54;
+  font-size: 20px;
+}
+
+.container .c16 .title {
+  font-size: 36px;
+}
+
+.container .c16 .desc {
+  color: #707070;
+  margin: 20px 0;
+}
+
+.container .c17 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 레이어 c18 -> footer */
+.container .footer .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.container .footer .main {
+  color: #069c54;
+}
+
+.container .footer li {
+  list-style: none;
+  padding: 5px 0;
+  color: #707070;
+}
+
+@media screen and (max-width: 659px) {
+  .container .footer {
+    margin-bottom: 26px;
+  }
+}

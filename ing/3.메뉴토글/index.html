@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tast Good</title>
+  <link
+    rel="stylesheet"
+    href="css/animate.css"
+  />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="css/common_layout.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/style.css">
+  </style>
+</head>
+<body>
+  
+  <div class="main">
+
+    <div class="container header" style="padding-top: 0; padding-bottom: 0;">
+      <div class="row">
+        <div class="c1 background_init">
+          <h1 class="logo">Tasty</h1>
+          <!-- 메뉴 확장시 .expand 클래스 추가-->
+          <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Menu</a></li>
+          </ul>
+          <span class="mobile-menu material-icons">
+          menu
+          </span>
+        </div>  
+      </div>      
+    </div>   
+
+  
+  </div>
+  <script>
+      const el = document.querySelector(".mobile-menu");
+      el.addEventListener("click", function(){
+        this.previousElementSibling.classList.toggle("expand");
+      })
+      console.log(el);
+  </script>
+</body>
+</html>
