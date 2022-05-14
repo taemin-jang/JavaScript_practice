@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .one {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      .two {
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+        background-color: blue;
+      }
+
+      .three {
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        background-color: orange;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="searchKeyword" type="text" @keyup.enter="search" />
+      <button @click="search">검색</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          searchKeyword: "",
+        },
+        methods: {
+          search() {
+            console.log("search start ... " + this.searchKeyword);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
