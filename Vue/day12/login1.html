@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="form-wrapper" id="app">
+      <img src="https://i.imgur.com/iqskGqe.jpg" alt="bg1" />
+      <div class="content-wrapper" id="content-signin">
+        <h1>Hello!</h1>
+        <form class="form-login" v-on:submit="chkForm">
+          <input
+            v-model="searchKeyword"
+            ref="searchKeyword"
+            type="text"
+            name="username"
+            @keyup.enter="search"
+            placeholder="Username"
+            class="input-username"
+            v-bind:class="{error : searchKeywordError}"
+            id="input-username"
+          />
+          <p class="error_txt">{{searchKeywordErrorMsg}}</p>
+          <input
+            v-model="searchPassword"
+            ref="searchPassword"
+            type="password"
+            name="password"
+            @keyup.enter="password"
+            placeholder="Password"
+            class="input-password"
+            v-bind:class="{error : searchPasswordError}"
+            id="input-password"
+          />
+          <p class="error_txt">{{searchPasswordErrorMsg}}</p>
+          <div class="custom-checkbox">
+            <input v-model="inputChk" type="checkbox" id="id_save" />
+            <label for="id_save">아이디 저장</label>
+          </div>
+          <button type="submit" class="btn-login">login</button>
+        </form>
+        <p>No account? <a href="#app">Sign up</a></p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          searchKeyword: "", // v-model은 양방향 전송
+          searchKeywordError: false,
+          searchKeywordErrorMsg: "",
+          searchPassword: "",
+          searchPasswordError: false,
+          searchPasswordErrorMsg: "",
+          inputChk: false,
+        },
+        // watch 지켜보는것 searchKeyword의 값이 실시간이 변경되는것을 확인해줌
+        watch: {
+          // 객체 이름은 v-model과 동일해야함
+          searchKeyword: function (val) {
+            console.log(val);
+            if (val.trim() !== "") {
+              this.searchKeywordError = false;
+              this.searchKeywordErrorMsg = "";
+            }
+          },
+          searchPassword: function (val) {
+            console.log(val);
+            if (val.trim() !== "") {
+              this.searchPasswordError = false;
+              this.searchPasswordErrorMsg = "";
+            }
+          },
+        },
+        // 웹페이지가 준비 되었을 때 최초 한번만 실행되는 것
+        // 하나의 뷰 코드에서 mounted는 하나만 존재
+        mounted() {
+          console.log("loading end");
+          console.log(localStorage.getItem("id")); // localStotage에 저장되어 잇는 아이디를 불러옴
+          this.searchKeyword = localStorage.getItem("id");
+          if (this.searchKeyword !== "") {
+            this.inputChk = true;
+          }
+        },
+        methods: {
+          chkForm(e) {
+            e.preventDefault(); // form submit 막음
+
+            console.log(this.inputChk);
+
+            // trim이 비어있으면
+            if (this.searchKeyword.trim() === "") {
+              this.searchKeywordError = true;
+              this.searchKeywordErrorMsg = "커스텀 아이디";
+              this.$refs.searchKeyword.focus(); // 여러개의 refs에서 searchKeyword 값에 focus를 해주겠다.
+              return;
+            }
+            this.searchKeywordError = false;
+
+            // trim이 비어있으면
+            if (this.searchPassword.trim() === "") {
+              this.searchPasswordError = true;
+              this.searchPasswordErrorMsg = "커스텀 패스워드";
+              this.$refs.searchPassword.focus();
+              return;
+            }
+            this.searchPasswordError = false;
+
+            // 로그인
+            if (this.inputChk) {
+              localStorage.setItem("id", this.searchKeyword); // localStorage는 저장 공간
+              localStorage.setItem("password", this.searchPassword);
+            } else {
+              localStorage.removeItem("id");
+              localStorage.removeItem("password");
+            }
+
+            console.log("login succes");
+            console.log(this.searchKeyword + this.searchPassword);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
