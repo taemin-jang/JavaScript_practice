@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import LoginVue from "./components/LoginVue.vue";
+import LoginVue from "./components/LoginVue.vue"
 export default {
   components: {
-    LoginVue,
+    LoginVue
   },
 };
 </script>

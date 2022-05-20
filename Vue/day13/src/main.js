@@ -1,8 +1,8 @@
 import Vue from "vue";
-import Login from "./Login.vue";
+import App from "./App.vue";
 
 Vue.config.productionTip = false;
 
 new Vue({
-  render: (h) => h(Login),
-}).$mount("#Login");
+  render: (h) => h(App),
+}).$mount("#app");
