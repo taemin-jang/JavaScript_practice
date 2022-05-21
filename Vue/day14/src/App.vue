@@ -1,15 +1,15 @@
 <template>
   <div>
-    <MyLoginPage />
+    <MyLoginPage1 />
   </div>
 </template>
 
 <script>
-import MyLoginPage from "./components/MyLoginPage.vue";
+import MyLoginPage1 from "./components/MyLoginPage1.vue";
 export default {
   name: "App",
   components: {
-    MyLoginPage,
+    MyLoginPage1,
   },
 };
 </script>
